@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  
+  </head>
+  <body class="">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <!-- Typed.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
+<!-- Particles.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+
+<!-- Lottie -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script>
+      // Disable right-click
+      document.addEventListener("contextmenu", (event) => {
+          event.preventDefault();
+          // alert("Right-click is disabled!");
+      });
+
+      // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+      document.addEventListener("keydown", (event) => {
+          if (
+              event.key === "F12" || // Disable F12
+              (event.ctrlKey && event.shiftKey && event.key === "I") || // Disable Ctrl+Shift+I
+              (event.ctrlKey && event.shiftKey && event.key === "J") || // Disable Ctrl+Shift+J
+              (event.ctrlKey && event.key === "U") // Disable Ctrl+U (View Source)
+          ) {
+              event.preventDefault();
+              // alert("Developer tools are disabled!");
+          }
+      });
+      document.addEventListener("selectstart", (event) => {
+    event.preventDefault();
+});
+document.addEventListener("copy", (event) => {
+    event.preventDefault();
+    alert("Copying is disabled!");
+});
+
+document.addEventListener("paste", (event) => {
+    event.preventDefault();
+    alert("Pasting is disabled!");
+});
+
+
+window.addEventListener('blur', () => {
+    document.body.style.filter = 'blur(5px)';
+});
+
+window.addEventListener('focus', () => {
+    document.body.style.filter = 'none';
+});
+
+
+document.querySelectorAll("img").forEach((img) => {
+    img.addEventListener("contextmenu", (event) => {
+        event.preventDefault();
+        alert("Image saving is disabled!");
+    });
+});
+document.addEventListener("click", (event) => {
+    console.log(`Mouse clicked at X: ${event.clientX}, Y: ${event.clientY}`);
+});
+
+document.addEventListener("keypress", (event) => {
+    console.log(`Key pressed: ${event.key}`);
+});
+window.onbeforeprint = function() {
+    alert("Printing is disabled on this page.");
+    return false;
+};
+window.onbeforeunload = function() {
+    return "Are you sure you have known everything about me";
+};
+history.pushState(null, null, location.href);
+window.onpopstate = function() {
+    history.pushState(null, null, location.href);
+};
+document.addEventListener("keyup", (event) => {
+    if (event.key === "PrintScreen") {
+        document.body.style.filter = "blur(10px)";
+        alert("Screenshots are disabled!");
+    }
+});
+if (sessionStorage.getItem("active")) {
+    alert("You already have this page open in another tab!");
+    window.close();
+} else {
+    sessionStorage.setItem("active", true);
+}
+
+window.addEventListener("unload", () => {
+    sessionStorage.removeItem("active");
+});
+// setTimeout(() => {
+//     const before = document.querySelectorAll("div").length;
+//     setTimeout(() => {
+//         const after = document.querySelectorAll("div").length;
+//         if (after > before) {
+//             alert("Please disable browser extensions to view this page.");
+//             document.body.style.overflowX = 'hidden';
+//         }
+//     }, 1000);
+// }, 1000);
+// document.addEventListener("mousemove", (event) => {
+//     const x = (event.clientX / window.innerWidth - 0.5) * 10;
+//     const y = (event.clientY / window.innerHeight - 0.5) * 10;
+//     document.body.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
+// });
+
+  </script>
+  </body>
+</html>
